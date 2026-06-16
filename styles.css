@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.main-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    width: 860px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.volume-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.controls-info {
+    text-align: right;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+#dartboard {
+    display: block;
+}
+
+#prediction-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.math-problem-box {
+    background: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.timer-text {
+    font-size: 0.9rem;
+    color: #d9534f;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Spinner Modal Details */
+.spinner-content {
+    width: 350px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #007bff;
+    transition: width 1s linear;
+}
+
+.decorative-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    width: 30%;
+    margin: 25px auto 0 auto;
+    cursor: default; /* Blends in as a non-interactive element */
+}
+
+/* Toast */
+#toast {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(40, 167, 69, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#toast.hidden {
+    opacity: 0;
+}
+
+/* Footer & Hidden Reload */
+.footer {
+    margin-top: auto;
+    padding: 20px;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+#real-reload {
+    cursor: text; /* Masquerades as text */
+}

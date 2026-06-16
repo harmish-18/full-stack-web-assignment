@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Preferences</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h2>Audio Output Volume</h2>
+            <div class="volume-display">
+                <span id="vol-value">0</span>%
+            </div>
+            <div class="controls-info">
+                <p>Throw darts to select your volume.</p>
+                <p>Darts Remaining: <strong id="darts-display">3</strong></p>
+                <button id="fake-reload-btn">Reload Darts</button>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <canvas id="dartboard" width="800" height="400"></canvas>
+            <div id="prediction-dot"></div>
+            <div id="toast" class="hidden"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span id="real-reload">©</span> 2024 Volume Controller
+    </div>
+
+    <div id="math-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Human Verification Required</h3>
+            <p class="subtitle">Please solve the problem to confirm volume change.</p>
+            <div class="math-problem-box">
+                <span id="math-problem"></span>
+            </div>
+            <p class="timer-text">Time remaining: <span id="math-timer"></span>s</p>
+            <div class="input-group">
+                <input type="text" id="math-input" autocomplete="off" placeholder="Enter answer">
+                <button id="math-submit">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="spinner-modal" class="modal hidden">
+        <div class="modal-content spinner-content">
+            <h3>Requesting Darts...</h3>
+            <p>Connecting to dart supply servers.</p>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p class="timer-text"><span id="spinner-time">60</span> seconds remaining</p>
+            <button id="fake-close-spinner">Cancel & Close</button>
+            
+            <hr id="real-escape" class="decorative-divider">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
